@@ -27,7 +27,6 @@ export default function Card({
       onClick={onClick}
       role={onClick ? 'button' : undefined}
       tabIndex={onClick ? 0 : undefined}
-      style={style}
     >
       {children}
     </div>
