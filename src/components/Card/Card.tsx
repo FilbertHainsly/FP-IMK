@@ -7,6 +7,7 @@ interface CardProps {
   className?: string;
   onClick?: () => void;
   id?: string;
+  style?: React.CSSProperties;
 }
 
 export default function Card({
@@ -16,11 +17,13 @@ export default function Card({
   className = '',
   onClick,
   id,
+  style,
 }: CardProps) {
   return (
     <div
       id={id}
       className={`card card--${variant} card--p-${padding} ${onClick ? 'card--clickable' : ''} ${className}`}
+      style={style}
       onClick={onClick}
       role={onClick ? 'button' : undefined}
       tabIndex={onClick ? 0 : undefined}

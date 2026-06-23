@@ -76,13 +76,19 @@ export default function DetailBantuan() {
           </Card>
         </div>
 
-        <Card padding="md" className="detail-bantuan__desc animate-fade-in-up" style={{ animationDelay: '0.15s' }}>
-          <div className="detail-bantuan__desc-label">DESKRIPSI</div>
-          <p>{ticket.description}</p>
+        <Card padding="md" className="detail-bantuan__location animate-fade-in-up" style={{ animationDelay: '0.15s' }}>
+          <div className="detail-bantuan__location-label" style={{ fontSize: '0.75rem', fontWeight: 800, color: 'var(--color-text-secondary)', marginBottom: '12px' }}>LOKASI PENJEMPUTAN</div>
+          <div className="detail-bantuan__location-map" style={{ width: '100%', height: '140px', borderRadius: 'var(--radius-md)', overflow: 'hidden', marginBottom: '12px' }}>
+            <img src="/dummy-map.png" alt="Map Lokasi" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+          </div>
+          <div className="detail-bantuan__location-address">
+            <div className="detail-bantuan__location-street" style={{ fontWeight: 700, fontSize: '0.9rem', color: 'var(--color-text-primary)' }}>Jl. Sukamaju No. 123, Blok A</div>
+            <div className="detail-bantuan__location-city" style={{ fontSize: '0.8rem', color: 'var(--color-text-secondary)', marginTop: '4px' }}>Kecamatan Sukabumi, Kota Maju</div>
+          </div>
         </Card>
 
         <div className="detail-bantuan__actions animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-          <Button id="btn-accept" variant="primary" fullWidth onClick={() => navigate('/bantuan/berhasil')}>
+          <Button id="btn-accept" variant="primary" fullWidth onClick={() => navigate(`/bantuan/${id}/rekam`)}>
             Terima & Bantu Sekarang
           </Button>
           <Button id="btn-skip" variant="secondary" fullWidth onClick={() => navigate(-1)}>

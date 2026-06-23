@@ -19,6 +19,8 @@ import Dashboard from '../pages/dashboard/Dashboard';
 // Bantuan
 import DaftarBantuan from '../pages/bantuan/DaftarBantuan';
 import DetailBantuan from '../pages/bantuan/DetailBantuan';
+import RekamBantuan from '../pages/bantuan/RekamBantuan';
+import StatusBantuan from '../pages/bantuan/StatusBantuan';
 import FormPengajuan from '../pages/bantuan/FormPengajuan';
 import PengajuanBerhasil from '../pages/bantuan/PengajuanBerhasil';
 
@@ -70,6 +72,12 @@ export default function AppRoutes() {
       {/* Detail pages (have own navbar, no bottom nav) */}
       <Route path="/bantuan/:id" element={
         <ProtectedRoute requireVerified><DetailBantuan /></ProtectedRoute>
+      } />
+      <Route path="/bantuan/:id/rekam" element={
+        <ProtectedRoute requireVerified><RekamBantuan /></ProtectedRoute>
+      } />
+      <Route path="/bantuan/:id/status" element={
+        <ProtectedRoute requireVerified><StatusBantuan /></ProtectedRoute>
       } />
       <Route path="/bantuan/ajukan" element={
         <ProtectedRoute requireVerified><FormPengajuan /></ProtectedRoute>

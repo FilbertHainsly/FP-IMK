@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import { CheckCircle, ArrowRight, Home, Bell } from 'lucide-react';
+import { CheckCircle, ArrowRight, Home, Star } from 'lucide-react';
 import Navbar from '../../components/Navbar/Navbar';
 import Button from '../../components/Button/Button';
 import Card from '../../components/Card/Card';
@@ -18,8 +18,8 @@ export default function PengajuanBerhasil() {
         </div>
 
         <div className="pengajuan-berhasil__header animate-fade-in-up">
-          <h2>Tiket Dibuat!</h2>
-          <p>Permintaan bantuan Anda telah dikirim</p>
+          <h2>Bantuan Selesai!</h2>
+          <p>Terima kasih atas partisipasinya</p>
         </div>
 
         <Card padding="md" className="pengajuan-berhasil__info animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
@@ -28,27 +28,25 @@ export default function PengajuanBerhasil() {
             <span className="pengajuan-berhasil__value text-primary">#{ticketId}</span>
           </div>
           <div className="pengajuan-berhasil__row">
-            <span className="pengajuan-berhasil__label-sm">Jenis Bantuan</span>
-            <span className="pengajuan-berhasil__value-sm">Bantuan Relawan</span>
+            <span className="pengajuan-berhasil__label-sm">Durasi Sesi</span>
+            <span className="pengajuan-berhasil__value-sm font-bold">12 menit</span>
           </div>
           <div className="pengajuan-berhasil__row">
             <span className="pengajuan-berhasil__label-sm">Status</span>
-            <span className="pengajuan-berhasil__value-sm text-primary font-bold">Menunggu</span>
+            <span className="pengajuan-berhasil__value-sm text-primary font-bold">Selesai</span>
           </div>
         </Card>
 
-        <div className="pengajuan-berhasil__waiting animate-fade-in-up" style={{ animationDelay: '0.15s' }}>
-          <div className="pengajuan-berhasil__dots">
-            <span className="pengajuan-berhasil__dot pengajuan-berhasil__dot--active" />
-            <span className="pengajuan-berhasil__dot pengajuan-berhasil__dot--mid" />
-            <span className="pengajuan-berhasil__dot" />
+        <Card padding="md" className="pengajuan-berhasil__rating animate-fade-in-up" style={{ animationDelay: '0.15s', marginBottom: '20px' }}>
+          <div className="pengajuan-berhasil__rating-label" style={{ fontSize: '0.85rem', fontWeight: 800, color: 'var(--color-text-secondary)', textAlign: 'center', marginBottom: '12px' }}>Beri Penilaian Sesi Ini</div>
+          <div className="pengajuan-berhasil__stars" style={{ display: 'flex', justifyContent: 'center', gap: '8px' }}>
+            {[1, 2, 3, 4, 5].map((star) => (
+              <button key={star} className="pengajuan-berhasil__star" aria-label={`${star} bintang`} style={{ background: 'none', border: 'none', cursor: 'pointer', padding: '4px' }}>
+                <Star size={32} fill={star <= 4 ? 'var(--color-primary)' : 'none'} stroke="var(--color-primary)" />
+              </button>
+            ))}
           </div>
-          <span className="pengajuan-berhasil__waiting-text">Menunggu respon relawan..</span>
-          <Card variant="bordered" padding="sm" className="pengajuan-berhasil__notice">
-            <Bell size={14} />
-            <span>Anda akan mendapat notifikasi saat relawan merespons</span>
-          </Card>
-        </div>
+        </Card>
 
         <div className="pengajuan-berhasil__actions animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
           <Button id="btn-view-riwayat" variant="primary" fullWidth icon={<ArrowRight size={16} />} iconPosition="right" onClick={() => navigate('/riwayat')}>

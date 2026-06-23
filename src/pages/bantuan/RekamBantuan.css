@@ -1,0 +1,159 @@
+.rekam-bantuan {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-bg);
+}
+
+.rekam-bantuan__content {
+  flex: 1;
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.rekam-bantuan__loading {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rekam-bantuan__spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid var(--color-border);
+  border-top-color: var(--color-primary);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.rekam-bantuan__top {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.rekam-bantuan__ticket-label {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: var(--color-text-muted);
+  letter-spacing: 0.5px;
+}
+
+.rekam-bantuan__top h2 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin: 0;
+  letter-spacing: -0.5px;
+}
+
+.rekam-bantuan__card-title {
+  font-size: 0.9rem;
+  font-weight: 800;
+  margin: 0 0 12px 0;
+  color: var(--color-text-secondary);
+}
+
+.rekam-bantuan__requester {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.rekam-bantuan__requester-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--color-primary-bg-subtle);
+  border: 1px solid var(--color-primary-border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary);
+}
+
+.rekam-bantuan__requester-name {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--color-text-primary);
+}
+
+.rekam-bantuan__card-desc {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--color-text-primary);
+  font-style: italic;
+  background: var(--color-bg);
+  padding: 12px;
+  border-radius: var(--radius-md);
+  border-left: 3px solid var(--color-primary);
+}
+
+.rekam-bantuan__recorder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  gap: 8px;
+}
+
+.rekam-bantuan__timer {
+  font-size: 2.5rem;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+  color: var(--color-text-primary);
+}
+
+.rekam-bantuan__status {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--color-text-secondary);
+  margin-bottom: 16px;
+}
+
+.rekam-bantuan__mic-btn {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  color: var(--color-primary-dark);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(250, 229, 0, 0.3);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-bottom: 24px;
+}
+
+.rekam-bantuan__mic-btn:active {
+  transform: scale(0.95);
+  box-shadow: 0 4px 12px rgba(250, 229, 0, 0.2);
+}
+
+.rekam-bantuan__waveform {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  height: 40px;
+}
+
+.rekam-bantuan__waveform-bar {
+  width: 6px;
+  background-color: var(--color-border);
+  border-radius: 3px;
+  transition: all 0.1s ease;
+}
+
+.rekam-bantuan__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: auto;
+}

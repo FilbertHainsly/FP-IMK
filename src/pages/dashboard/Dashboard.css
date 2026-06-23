@@ -125,27 +125,65 @@
 /* Ticket Cards */
 .dashboard__ticket {
   display: flex;
-  align-items: center;
+  flex-direction: column;
   gap: 12px;
   padding: 12px;
   background: var(--color-bg-card);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
-  cursor: pointer;
   transition: all var(--transition-fast);
   width: 100%;
   text-align: left;
   font-family: var(--font-body);
 }
 
-.dashboard__ticket:hover {
-  border-color: var(--color-primary-border-subtle);
-  background: var(--color-bg-elevated);
+.dashboard__ticket-top {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
 }
 
-.dashboard__ticket:active {
-  transform: scale(0.98);
+.dashboard__ticket-vn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  background: var(--color-bg-elevated, #f1f5f9);
+  padding: 8px 12px;
+  border-radius: var(--radius-full);
 }
+
+.dashboard__ticket-vn-play {
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dashboard__ticket-vn-waveform {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  height: 20px;
+}
+
+.dashboard__ticket-vn-bar {
+  flex: 1;
+  background-color: var(--color-primary);
+  border-radius: 2px;
+  min-height: 4px;
+}
+
+.dashboard__ticket-vn-duration {
+  font-size: 0.75rem;
+  color: var(--color-text-secondary);
+  font-weight: 600;
+  margin-left: auto;
+}
+
+
 
 .dashboard__ticket-avatar {
   width: 40px;
@@ -179,16 +217,18 @@
 
 .dashboard__ticket-meta {
   display: flex;
-  gap: 12px;
-  margin-top: 4px;
-  font-size: 0.7rem;
+  justify-content: flex-start;
+  gap: 8px;
+  width: 100%;
+  margin-top: 2px;
+  font-size: 0.75rem;
   color: var(--color-text-secondary);
 }
 
 .dashboard__ticket-dist {
   display: flex;
   align-items: center;
-  gap: 3px;
+  gap: 4px;
 }
 
 .dashboard__ticket-time {
@@ -201,10 +241,21 @@
 
 .dashboard__ticket-btn {
   display: inline-block;
-  padding: 6px 12px;
+  padding: 10px 16px;
   background: var(--color-primary);
   color: var(--color-text-dark);
-  border-radius: var(--radius-sm);
-  font-size: 0.7rem;
-  font-weight: 700;
+  border-radius: var(--radius-full, 100px);
+  font-size: 0.85rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.dashboard__ticket-btn:hover {
+  filter: brightness(1.1);
+  transform: translateY(-1px);
+}
+
+.dashboard__ticket-btn:active {
+  transform: translateY(0) scale(0.98);
 }

@@ -1,5 +1,6 @@
 import { useLocation, useNavigate } from 'react-router-dom';
 import { HelpCircle, Clock, User, Settings } from 'lucide-react';
+import { useAuth } from '../../contexts/AuthContext';
 import './BottomNav.css';
 
 interface NavItem {
@@ -18,6 +19,11 @@ const navItems: NavItem[] = [
 export default function BottomNav() {
   const location = useLocation();
   const navigate = useNavigate();
+  const { user } = useAuth();
+
+  const filteredNavItems = user?.role === 'tunanetra'
+    ? navItems.slice(0, 2)
+    : navItems;
 
   const isActive = (path: string) => {
     if (path === '/dashboard') {
@@ -28,7 +34,7 @@ export default function BottomNav() {
 
   return (
     <nav className="bottom-nav" id="bottom-navigation">
-      {navItems.map((item) => (
+      {filteredNavItems.map((item) => (
         <button
           key={item.path}
           id={`nav-${item.label.toLowerCase()}`}

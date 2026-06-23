@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import { Award, Calendar, Star, Edit } from 'lucide-react';
+import { Award, Calendar, Star, Edit, LogOut } from 'lucide-react';
 import { useAuth } from '../../contexts/AuthContext';
 import Card from '../../components/Card/Card';
 import Button from '../../components/Button/Button';
@@ -7,7 +7,12 @@ import './Profile.css';
 
 export default function Profile() {
   const navigate = useNavigate();
-  const { user } = useAuth();
+  const { user, logout } = useAuth();
+
+  const handleLogout = () => {
+    logout();
+    navigate('/login');
+  };
 
   return (
     <div className="profile" id="profile-page">
@@ -63,6 +68,12 @@ export default function Profile() {
       <Button id="btn-edit-profile" variant="outline" fullWidth icon={<Edit size={16} />} onClick={() => navigate('/profil/edit')}>
         Edit Profil
       </Button>
+
+      <div style={{ marginTop: '16px' }}>
+        <Button id="btn-logout" variant="danger" fullWidth icon={<LogOut size={16} />} onClick={handleLogout}>
+          Keluar
+        </Button>
+      </div>
     </div>
   );
 }
