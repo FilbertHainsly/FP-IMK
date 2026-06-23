@@ -1,12 +1,13 @@
-import { useNavigate } from 'react-router-dom';
-import { Bell, Moon, Volume2, Shield, HelpCircle, LogOut, ChevronRight, Globe } from 'lucide-react';
-import { useAuth } from '../../contexts/AuthContext';
-import Button from '../../components/Button/Button';
+import { useState } from 'react';
+import { Bell, Volume2, Mail, MapPin, Radio, Moon, Globe, ChevronRight } from 'lucide-react';
 import './Settings.css';
 
 interface SettingsItem {
   icon: React.ReactNode;
   label: string;
+  description?: string;
+  id: string;
+  type?: 'toggle' | 'link';
   value?: string;
 }
 
@@ -16,26 +17,42 @@ interface SettingsGroup {
 }
 
 export default function Settings() {
-  const navigate = useNavigate();
-  const { logout } = useAuth();
+  const [toggles, setToggles] = useState<Record<string, boolean>>({
+    'notif_bantuan': true,
+    'notif_suara': true,
+    'notif_email': false,
+    'privasi_lokasi': true,
+    'privasi_online': true,
+    'tampilan_gelap': false,
+  });
 
-  const handleLogout = () => { logout(); navigate('/login', { replace: true }); };
+  const handleToggle = (id: string, type: 'toggle' | 'link' = 'toggle') => {
+    if (type === 'toggle') {
+      setToggles(prev => ({ ...prev, [id]: !prev[id] }));
+    }
+  };
 
   const settingsGroups: SettingsGroup[] = [
     {
-      title: 'Preferensi',
+      title: 'Notifikasi',
       items: [
-        { icon: <Bell size={18} />, label: 'Notifikasi', value: 'Aktif' },
-        { icon: <Moon size={18} />, label: 'Mode Gelap', value: 'Aktif' },
-        { icon: <Volume2 size={18} />, label: 'Suara & Getaran', value: 'Aktif' },
-        { icon: <Globe size={18} />, label: 'Bahasa', value: 'Indonesia' },
+        { id: 'notif_bantuan', icon: <Bell size={18} />, label: 'Permintaan Bantuan Baru', description: 'Notif saat ada tiket baru di sekitar Anda' },
+        { id: 'notif_suara', icon: <Volume2 size={18} />, label: 'Notifikasi Suara', description: 'Suara saat menerima notifikasi' },
+        { id: 'notif_email', icon: <Mail size={18} />, label: 'Kirim ke Email', description: 'Ringkasan bantuan via email' },
       ],
     },
     {
-      title: 'Lainnya',
+      title: 'Privasi & Lokasi',
       items: [
-        { icon: <Shield size={18} />, label: 'Keamanan Akun' },
-        { icon: <HelpCircle size={18} />, label: 'Pusat Bantuan' },
+        { id: 'privasi_lokasi', icon: <MapPin size={18} />, label: 'Bagikan Lokasi', description: 'Diperlukan untuk menemukan pengguna yang membutuhkan' },
+        { id: 'privasi_online', icon: <Radio size={18} />, label: 'Status Online', description: 'Tampilkan status tersedia ke pengguna' },
+      ],
+    },
+    {
+      title: 'Tampilan',
+      items: [
+        { id: 'tampilan_gelap', icon: <Moon size={18} />, label: 'Mode Gelap', description: 'Aktif secara default untuk aksesibilitas' },
+        { id: 'tampilan_bahasa', type: 'link', value: 'Indonesia', icon: <Globe size={18} />, label: 'Bahasa' },
       ],
     },
   ];
@@ -51,24 +68,34 @@ export default function Settings() {
           <h3 className="settings__group-title">{group.title}</h3>
           <div className="settings__group-items">
             {group.items.map((item) => (
-              <button key={item.label} className="settings__item">
+              <div key={item.label} className="settings__item" onClick={() => handleToggle(item.id, item.type)}>
                 <span className="settings__item-icon">{item.icon}</span>
-                <span className="settings__item-label">{item.label}</span>
-                <span className="settings__item-right">
-                  {item.value && <span className="settings__item-value">{item.value}</span>}
-                  <ChevronRight size={16} />
+                <div className="settings__item-text-container">
+                  <span className="settings__item-label">{item.label}</span>
+                  {item.description && <span className="settings__item-description">{item.description}</span>}
+                </div>
+                <span className="settings__item-right" onClick={(e) => { if(item.type !== 'link') e.stopPropagation(); }}>
+                  {item.type === 'link' ? (
+                    <>
+                      {item.value && <span className="settings__item-value">{item.value}</span>}
+                      <ChevronRight size={16} />
+                    </>
+                  ) : (
+                    <label className="settings__toggle">
+                      <input 
+                        type="checkbox" 
+                        checked={toggles[item.id]} 
+                        onChange={() => handleToggle(item.id)} 
+                      />
+                      <span className="settings__toggle-slider"></span>
+                    </label>
+                  )}
                 </span>
-              </button>
+              </div>
             ))}
           </div>
         </div>
       ))}
-
-      <div className="settings__logout animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-        <Button id="btn-logout" variant="danger" fullWidth icon={<LogOut size={16} />} onClick={handleLogout}>
-          Keluar dari Akun
-        </Button>
-      </div>
     </div>
   );
 }
