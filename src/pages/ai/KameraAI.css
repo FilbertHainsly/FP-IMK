@@ -1,0 +1,17 @@
+.kamera-ai { min-height: 100vh; background: #000; display: flex; flex-direction: column; }
+.kamera-ai__viewport { flex: 1; position: relative; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #0a0a0a, #1a1a1a); min-height: 300px; }
+.kamera-ai__placeholder { display: flex; flex-direction: column; align-items: center; gap: 12px; color: var(--color-text-muted); }
+.kamera-ai__focus-icon { animation: pulse 2s ease-in-out infinite; }
+.kamera-ai__placeholder p { font-size: 0.85rem; margin: 0; }
+.kamera-ai__overlay { position: absolute; inset: 30px; pointer-events: none; }
+.kamera-ai__corner { position: absolute; width: 24px; height: 24px; border-color: var(--color-primary); }
+.kamera-ai__corner--tl { top: 0; left: 0; border-top: 3px solid; border-left: 3px solid; }
+.kamera-ai__corner--tr { top: 0; right: 0; border-top: 3px solid; border-right: 3px solid; }
+.kamera-ai__corner--bl { bottom: 0; left: 0; border-bottom: 3px solid; border-left: 3px solid; }
+.kamera-ai__corner--br { bottom: 0; right: 0; border-bottom: 3px solid; border-right: 3px solid; }
+.kamera-ai__controls { display: flex; align-items: center; justify-content: center; gap: 28px; padding: 20px; background: var(--color-bg); }
+.kamera-ai__ctrl-btn { width: 44px; height: 44px; border-radius: 50%; background: var(--color-bg-card); border: 1px solid var(--color-border); color: var(--color-text-primary); display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all var(--transition-fast); }
+.kamera-ai__ctrl-btn:hover { border-color: var(--color-primary); color: var(--color-primary); }
+.kamera-ai__capture-btn { width: 64px; height: 64px; border-radius: 50%; background: var(--color-primary); border: 4px solid var(--color-primary-dark); color: var(--color-text-dark); display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all var(--transition-fast); box-shadow: 0 0 20px rgba(250, 229, 0, 0.3); }
+.kamera-ai__capture-btn:hover { box-shadow: 0 0 30px rgba(250, 229, 0, 0.5); }
+.kamera-ai__capture-btn:active { transform: scale(0.9); }

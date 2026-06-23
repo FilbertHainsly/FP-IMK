@@ -1,0 +1,18 @@
+.daftar-bantuan { padding: 16px; display: flex; flex-direction: column; gap: 12px; }
+.daftar-bantuan__header { display: flex; justify-content: space-between; align-items: flex-start; }
+.daftar-bantuan__header h2 { font-size: 1rem; margin: 0; }
+.daftar-bantuan__count { font-size: 0.75rem; color: var(--color-text-muted); }
+.daftar-bantuan__live { display: flex; align-items: center; gap: 5px; font-size: 0.7rem; font-weight: 700; color: var(--color-success); }
+.daftar-bantuan__live-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--color-success); animation: pulse 2s ease-in-out infinite; }
+.daftar-bantuan__list { display: flex; flex-direction: column; gap: 10px; }
+.daftar-bantuan__skeleton { height: 80px; border-radius: var(--radius-lg); background: linear-gradient(90deg, var(--color-bg-card), var(--color-bg-elevated), var(--color-bg-card)); background-size: 200% 100%; animation: shimmer 1.5s infinite; }
+.daftar-bantuan__item { display: flex; gap: 12px; padding: 12px; background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); cursor: pointer; transition: all var(--transition-fast); width: 100%; text-align: left; font-family: var(--font-body); }
+.daftar-bantuan__item:hover { border-color: var(--color-primary-border-subtle); }
+.daftar-bantuan__item:active { transform: scale(0.98); }
+.daftar-bantuan__item-avatar { width: 40px; height: 40px; border-radius: 50%; background: var(--color-primary-bg-subtle); border: 1px solid var(--color-primary-border-subtle); display: flex; align-items: center; justify-content: center; color: var(--color-primary); flex-shrink: 0; }
+.daftar-bantuan__item-body { flex: 1; min-width: 0; }
+.daftar-bantuan__item-top { display: flex; justify-content: space-between; align-items: flex-start; }
+.daftar-bantuan__item-name { font-size: 0.85rem; font-weight: 700; color: var(--color-text-primary); }
+.daftar-bantuan__item-id { font-size: 0.7rem; color: var(--color-text-muted); }
+.daftar-bantuan__item-meta { display: flex; gap: 12px; margin-top: 6px; font-size: 0.7rem; color: var(--color-text-secondary); }
+.daftar-bantuan__item-meta span { display: flex; align-items: center; gap: 3px; }

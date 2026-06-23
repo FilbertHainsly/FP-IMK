@@ -1,0 +1,5 @@
+.edit-profile { min-height: 100vh; background: var(--color-bg); }
+.edit-profile__content { padding: 20px 16px; display: flex; flex-direction: column; align-items: center; gap: 20px; }
+.edit-profile__avatar { width: 80px; height: 80px; border-radius: 50%; background: linear-gradient(135deg, var(--color-primary) 0%, #e6d200 100%); display: flex; align-items: center; justify-content: center; font-size: 2rem; font-weight: 800; color: var(--color-text-dark); font-family: var(--font-display); position: relative; }
+.edit-profile__avatar-edit { position: absolute; bottom: -2px; right: -2px; width: 28px; height: 28px; border-radius: 50%; background: var(--color-bg-card); border: 2px solid var(--color-border); display: flex; align-items: center; justify-content: center; font-size: 0.7rem; cursor: pointer; }
+.edit-profile__form { width: 100%; display: flex; flex-direction: column; gap: 14px; }

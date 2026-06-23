@@ -1,0 +1,21 @@
+.pengajuan-berhasil { min-height: 100vh; background: var(--color-bg); }
+.pengajuan-berhasil__content { padding: 24px 16px; display: flex; flex-direction: column; align-items: center; gap: 18px; }
+.pengajuan-berhasil__icon { color: var(--color-success); }
+.pengajuan-berhasil__header { text-align: center; }
+.pengajuan-berhasil__header h2 { font-size: 1.2rem; font-weight: 800; margin: 0; }
+.pengajuan-berhasil__header p { font-size: 0.85rem; color: var(--color-text-muted); margin: 4px 0 0; }
+.pengajuan-berhasil__info { width: 100%; }
+.pengajuan-berhasil__row { display: flex; justify-content: space-between; align-items: center; padding: 6px 0; }
+.pengajuan-berhasil__row + .pengajuan-berhasil__row { border-top: 1px solid var(--color-border); }
+.pengajuan-berhasil__label { font-size: 0.7rem; font-weight: 700; color: var(--color-text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
+.pengajuan-berhasil__value { font-size: 0.85rem; font-weight: 700; }
+.pengajuan-berhasil__label-sm { font-size: 0.8rem; color: var(--color-text-muted); }
+.pengajuan-berhasil__value-sm { font-size: 0.8rem; font-weight: 600; color: var(--color-text-primary); }
+.pengajuan-berhasil__waiting { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+.pengajuan-berhasil__dots { display: flex; gap: 6px; }
+.pengajuan-berhasil__dot { width: 10px; height: 10px; border-radius: 50%; background: var(--color-border); }
+.pengajuan-berhasil__dot--active { background: var(--color-primary); animation: pulse 1.5s ease-in-out infinite; }
+.pengajuan-berhasil__dot--mid { background: var(--color-primary-muted); }
+.pengajuan-berhasil__waiting-text { font-size: 0.85rem; color: var(--color-text-muted); }
+.pengajuan-berhasil__notice { display: flex; align-items: center; gap: 8px; font-size: 0.75rem; color: var(--color-text-secondary); width: 100%; }
+.pengajuan-berhasil__actions { width: 100%; display: flex; flex-direction: column; gap: 8px; }

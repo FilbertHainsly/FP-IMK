@@ -1,0 +1,210 @@
+.dashboard {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.dashboard__greeting h2 {
+  font-size: 1.2rem;
+  font-weight: 800;
+  margin: 0;
+}
+
+.dashboard__greeting p {
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+  margin: 4px 0 0;
+}
+
+/* Tunanetra Cards */
+.dashboard__cards {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.dashboard__card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 16px;
+  border-radius: var(--radius-md);
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  text-align: center;
+  gap: 6px;
+  font-family: var(--font-body);
+}
+
+.dashboard__card:active {
+  transform: scale(0.97);
+}
+
+.dashboard__card--primary {
+  background: var(--color-primary);
+  color: var(--color-primary-dark);
+}
+
+.dashboard__card--primary:hover {
+  box-shadow: 0 0 30px rgba(250, 229, 0, 0.3);
+}
+
+.dashboard__card--secondary {
+  background: var(--color-secondary);
+  color: var(--color-secondary-text);
+}
+
+.dashboard__card--secondary:hover {
+  box-shadow: 0 0 30px rgba(0, 49, 232, 0.3);
+}
+
+.dashboard__card-icon {
+  margin-bottom: 4px;
+}
+
+.dashboard__card-title {
+  font-size: 1.1rem;
+  font-weight: 800;
+  letter-spacing: -0.3px;
+  line-height: 1.2;
+}
+
+.dashboard__card-subtitle {
+  font-size: 0.8rem;
+  font-weight: 700;
+  opacity: 0.8;
+}
+
+/* Relawan Active Tickets */
+.dashboard__relawan {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.dashboard__relawan-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.dashboard__relawan-header h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.dashboard__relawan-count {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+.dashboard__live-indicator {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.dashboard__live-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-success);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.dashboard__live-text {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--color-success);
+}
+
+/* Ticket Cards */
+.dashboard__ticket {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  width: 100%;
+  text-align: left;
+  font-family: var(--font-body);
+}
+
+.dashboard__ticket:hover {
+  border-color: var(--color-primary-border-subtle);
+  background: var(--color-bg-elevated);
+}
+
+.dashboard__ticket:active {
+  transform: scale(0.98);
+}
+
+.dashboard__ticket-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--color-primary-bg-subtle);
+  border: 1px solid var(--color-primary-border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary);
+  flex-shrink: 0;
+}
+
+.dashboard__ticket-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.dashboard__ticket-name {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+.dashboard__ticket-id {
+  font-size: 0.7rem;
+  color: var(--color-text-muted);
+  margin-top: 1px;
+}
+
+.dashboard__ticket-meta {
+  display: flex;
+  gap: 12px;
+  margin-top: 4px;
+  font-size: 0.7rem;
+  color: var(--color-text-secondary);
+}
+
+.dashboard__ticket-dist {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.dashboard__ticket-time {
+  color: var(--color-text-muted);
+}
+
+.dashboard__ticket-action {
+  flex-shrink: 0;
+}
+
+.dashboard__ticket-btn {
+  display: inline-block;
+  padding: 6px 12px;
+  background: var(--color-primary);
+  color: var(--color-text-dark);
+  border-radius: var(--radius-sm);
+  font-size: 0.7rem;
+  font-weight: 700;
+}

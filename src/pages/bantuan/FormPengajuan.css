@@ -1,0 +1,15 @@
+.form-pengajuan { min-height: 100vh; background: var(--color-bg); }
+.form-pengajuan__content { padding: 20px 16px; display: flex; flex-direction: column; align-items: center; gap: 20px; }
+.form-pengajuan__header { text-align: center; }
+.form-pengajuan__header h2 { font-size: 1.2rem; font-weight: 800; margin: 0; }
+.form-pengajuan__header p { font-size: 0.85rem; color: var(--color-text-muted); margin: 6px 0 0; }
+.form-pengajuan__mic-area { display: flex; flex-direction: column; align-items: center; gap: 14px; padding: 16px 0; }
+.form-pengajuan__mic-btn { width: 100px; height: 100px; border-radius: 50%; background: var(--color-bg-card); border: 3px solid var(--color-border); color: var(--color-text-muted); display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all var(--transition-normal); }
+.form-pengajuan__mic-btn:hover { border-color: var(--color-primary-border-subtle); color: var(--color-primary); }
+.form-pengajuan__mic-btn--recording { background: rgba(255, 107, 107, 0.1); border-color: var(--color-danger); color: var(--color-danger); animation: glow 1.5s ease-in-out infinite; box-shadow: 0 0 30px rgba(255, 107, 107, 0.2); }
+.form-pengajuan__mic-btn--done { background: var(--color-success-subtle); border-color: var(--color-success); color: var(--color-success); }
+.form-pengajuan__mic-label { font-size: 0.8rem; color: var(--color-text-muted); font-weight: 500; }
+.form-pengajuan__preview { width: 100%; }
+.form-pengajuan__preview-label { font-size: 0.75rem; font-weight: 700; color: var(--color-text-secondary); margin-bottom: 6px; }
+.form-pengajuan__preview-text { font-size: 0.9rem; color: var(--color-text-primary); line-height: 1.5; margin: 0; }
+.form-pengajuan__actions { width: 100%; display: flex; flex-direction: column; gap: 10px; }

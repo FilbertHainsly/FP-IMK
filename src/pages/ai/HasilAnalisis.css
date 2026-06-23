@@ -1,0 +1,9 @@
+.hasil-analisis { min-height: 100vh; background: var(--color-bg); }
+.hasil-analisis__content { padding: 16px; display: flex; flex-direction: column; gap: 14px; }
+.hasil-analisis__image { border-radius: var(--radius-lg); overflow: hidden; }
+.hasil-analisis__image-placeholder { height: 160px; background: linear-gradient(135deg, var(--color-bg-card), var(--color-bg-elevated)); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; color: var(--color-text-muted); font-size: 0.85rem; border: 1px solid var(--color-border); border-radius: var(--radius-lg); }
+.hasil-analisis__result h3 { font-size: 0.95rem; margin: 0 0 10px; }
+.hasil-analisis__tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
+.hasil-analisis__tag { padding: 4px 10px; border-radius: var(--radius-full); background: var(--color-primary-bg-subtle); border: 1px solid var(--color-primary-border-subtle); font-size: 0.7rem; font-weight: 600; color: var(--color-primary); }
+.hasil-analisis__desc p { font-size: 0.85rem; color: var(--color-text-secondary); line-height: 1.6; margin: 0 0 4px; }
+.hasil-analisis__actions { display: flex; flex-direction: column; gap: 8px; }

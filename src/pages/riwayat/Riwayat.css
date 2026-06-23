@@ -1,0 +1,22 @@
+.riwayat { padding: 16px; display: flex; flex-direction: column; gap: 14px; }
+.riwayat__header h2 { font-size: 1.1rem; font-weight: 800; margin: 0; }
+.riwayat__count { font-size: 0.75rem; color: var(--color-text-muted); }
+.riwayat__stats { display: flex; gap: 8px; }
+.riwayat__stat { flex: 1; padding: 10px 8px; background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-md); display: flex; flex-direction: column; gap: 2px; }
+.riwayat__stat-value { font-size: 0.95rem; font-weight: 800; }
+.riwayat__stat-label { font-size: 0.6rem; color: var(--color-text-muted); }
+.riwayat__stat--success .riwayat__stat-value { color: var(--color-success); }
+.riwayat__stat--danger .riwayat__stat-value { color: var(--color-danger); }
+.riwayat__stat--primary .riwayat__stat-value { color: var(--color-primary); }
+.riwayat__list { display: flex; flex-direction: column; gap: 8px; }
+.riwayat__skeleton { height: 72px; border-radius: var(--radius-lg); background: linear-gradient(90deg, var(--color-bg-card), var(--color-bg-elevated), var(--color-bg-card)); background-size: 200% 100%; animation: shimmer 1.5s infinite; }
+.riwayat__item { padding: 12px 14px; background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); display: flex; flex-direction: column; gap: 8px; width: 100%; text-align: left; cursor: pointer; font-family: var(--font-body); transition: all var(--transition-fast); }
+.riwayat__item:hover { border-color: var(--color-primary-border-subtle); }
+.riwayat__item:active { transform: scale(0.98); }
+.riwayat__item-top { display: flex; justify-content: space-between; align-items: flex-start; }
+.riwayat__item-title { font-size: 0.88rem; font-weight: 700; color: var(--color-text-primary); }
+.riwayat__item-ticket { font-size: 0.7rem; color: var(--color-text-muted); margin-top: 1px; }
+.riwayat__item-meta { display: flex; gap: 10px; flex-wrap: wrap; }
+.riwayat__item-relawan { display: flex; align-items: center; gap: 4px; font-size: 0.72rem; color: var(--color-text-secondary); }
+.riwayat__item-date { display: flex; align-items: center; gap: 4px; font-size: 0.72rem; color: var(--color-text-muted); }
+.riwayat__item-duration { display: flex; align-items: center; gap: 3px; font-size: 0.65rem; font-weight: 700; color: var(--color-primary); background: var(--color-primary-bg-subtle); border: 1px solid var(--color-primary-border-subtle); border-radius: var(--radius-full); padding: 2px 8px; }

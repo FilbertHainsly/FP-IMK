@@ -1,0 +1,112 @@
+.verifikasi-page {
+  min-height: 100vh;
+  background: var(--color-bg);
+}
+
+.verifikasi-page__content {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.verifikasi-page__header {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.verifikasi-page__icon-circle {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--color-primary-bg-subtle);
+  border: 2px solid var(--color-primary-border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary);
+}
+
+.verifikasi-page__header h2 {
+  font-size: 1.1rem;
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.verifikasi-page__header p {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+.verifikasi-page__notice-content {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.verifikasi-page__notice-icon {
+  color: var(--color-text-secondary);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.verifikasi-page__notice p {
+  font-size: 0.78rem;
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.verifikasi-page__form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.verifikasi-page__upload-section {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.verifikasi-page__upload-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+}
+
+.verifikasi-page__upload-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 16px;
+  border-radius: var(--radius-md);
+  border: 2px dashed var(--color-border);
+  background: var(--color-bg-card);
+  color: var(--color-text-muted);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.verifikasi-page__upload-btn:hover {
+  border-color: var(--color-primary-border-subtle);
+  background: var(--color-primary-bg-subtle);
+  color: var(--color-primary);
+}
+
+.verifikasi-page__upload-btn--done {
+  border-color: var(--color-success-border);
+  border-style: solid;
+  background: var(--color-success-subtle);
+  color: var(--color-success);
+}
