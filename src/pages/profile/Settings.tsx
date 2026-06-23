@@ -4,13 +4,24 @@ import { useAuth } from '../../contexts/AuthContext';
 import Button from '../../components/Button/Button';
 import './Settings.css';
 
+interface SettingsItem {
+  icon: React.ReactNode;
+  label: string;
+  value?: string;
+}
+
+interface SettingsGroup {
+  title: string;
+  items: SettingsItem[];
+}
+
 export default function Settings() {
   const navigate = useNavigate();
   const { logout } = useAuth();
 
   const handleLogout = () => { logout(); navigate('/login', { replace: true }); };
 
-  const settingsGroups = [
+  const settingsGroups: SettingsGroup[] = [
     {
       title: 'Preferensi',
       items: [
